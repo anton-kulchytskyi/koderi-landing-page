@@ -1,0 +1,9 @@
+export { default as HeroSection } from './HeroSection';
+export { default as ServicesSection } from './ServicesSection';
+export { default as ImgSection } from './ImgSection';
+export { default as WorkProcess } from './WorkProcess';
+export { default as PortfolioSection } from './PortfolioSection';
+export { default as TechnologiesSection } from './TechnologiesSection';
+export { default as ReviewsSection } from './ReviewsSection';
+export { default as AboutSection } from './AboutSection';
+export { default as FormSection } from './FormSection';

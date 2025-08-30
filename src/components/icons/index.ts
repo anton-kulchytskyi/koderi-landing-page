@@ -1,0 +1,8 @@
+export { default as BurgerMenu } from './ui/BurgerMenu';
+export { default as Close } from './ui/Close';
+export { default as NextArrowIcon } from './ui/NextArrowIcon';
+export { default as PrevArrowIcon } from './ui/PrevArrowIcon';
+export { default as UpArrowIcon } from './ui/UpArrowIcon';
+export { default as InstagramIcon } from './social/InstagramIcon';
+export { default as WhatsAppIcon } from './social/WhatsAppIcon';
+export { default as TelegramIcon } from './social/TelegramIcon';
