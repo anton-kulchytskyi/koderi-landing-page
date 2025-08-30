@@ -1,5 +1,30 @@
 export const localizationData = {
   uk: {
+    meta: {
+      title: 'Koderi — веб-студія',
+      description:
+        'Молода команда розробників, яка створює сайти та веб-застосунки з душею. Koderi — code with character.',
+      keywords: [
+        'Koderi',
+        'веб-студія',
+        'розробка сайтів',
+        'Next.js',
+        'UI/UX',
+        'дизайн',
+        'pet-проєкт',
+        'розробники Україна',
+      ],
+      og: {
+        title: 'Koderi — веб-студія',
+        description:
+          'Молода команда розробників, яка створює сайти та веб-застосунки з душею.',
+        alt: 'Koderi — code with character',
+      },
+      twitter: {
+        title: 'Koderi — веб-студія',
+        description: 'Ми створюємо веб-рішення з любов’ю до коду та дизайну.',
+      },
+    },
     header: {
       nav: {
         about: 'Про нас',
@@ -29,25 +54,25 @@ export const localizationData = {
           name: 'Юлія Коваленко',
           role: 'UI/UX дизайнер:',
           bio: 'Я створюю інтуїтивні та привабливі інтерфейси, які роблять взаємодію з продуктом зрозумілою та приємною.',
-          photo: '/team/yuliia.png',
+          photo: '/team/yuliia.webp',
         },
         {
           name: 'Антон Кульчицький',
           role: 'Frontend-розробник:',
           bio: 'Наш фронтенд-спеціаліст перетворює дизайн на живий інтерактивний сайт, забезпечуючи швидкість та адаптивність.',
-          photo: '/team/anton.png',
+          photo: '/team/anton.webp',
         },
         {
           name: 'Наталія Капій',
           role: 'QA-інженер:',
           bio: 'Відповідає за виявлення та усунення багів, гарантуючи бездоганну роботу всіх функцій і стабільність продукту.',
-          photo: '/team/natali.png',
+          photo: '/team/natali.webp',
         },
         {
           name: 'Сергій Безруков',
           role: 'DevOps-інженер:',
           bio: 'Забезпечує стабільну та безпечну інфраструктуру, автоматизуючи деплойменти та проактивно керуючи продуктивністю системи.',
-          photo: '/team/sergii.png',
+          photo: '/team/sergii.webp',
         },
       ],
     },
@@ -125,8 +150,10 @@ export const localizationData = {
     reviews: { title: 'Відгуки' },
     form: {
       title: 'Давайте обговоримо ваш проєкт',
-      desc1: 'Чи плануєте ви простий лендінг чи повноцінний вебпродукт — нам буде приємно почути ваші ідеї.',
-      desc2: 'Заповніть форму нижче, поділіться деталями, і ми незабаром зв’яжемося з вами, щоб обговорити наступні кроки.',
+      desc1:
+        'Чи плануєте ви простий лендінг чи повноцінний вебпродукт — нам буде приємно почути ваші ідеї.',
+      desc2:
+        'Заповніть форму нижче, поділіться деталями, і ми незабаром зв’яжемося з вами, щоб обговорити наступні кроки.',
       desc3: 'Давайте створимо щось справді круте разом!',
       subtitle: 'Отримайте безкоштовну консультацію',
       name: 'Ім’я',
@@ -134,6 +161,10 @@ export const localizationData = {
       email: 'Ел. пошта',
       emailPlaceholder: 'exempl@gmail.com',
       messagePlaceholder: 'Розкажіть нам про свою ідею',
+      sending: 'Відправка...',
+      success:
+        '✅ Повідомлення надіслано! Ми зв’яжемосясь з вами найближчим часом.',
+      error: '❌ Сталася помилка. Спробуйте ще раз пізніше.',
       submit: 'Надіслати заявку',
     },
 
@@ -146,6 +177,31 @@ export const localizationData = {
     },
   },
   en: {
+    meta: {
+      title: 'Koderi — web studio',
+      description:
+        'A young team of developers creating websites and web applications with soul. Koderi — code with character.',
+      keywords: [
+        'Koderi',
+        'web studio',
+        'website development',
+        'Next.js',
+        'UI/UX',
+        'design',
+        'pet project',
+        'developers Ukraine',
+      ],
+      og: {
+        title: 'Koderi — web studio',
+        description:
+          'A young team of developers creating websites and web applications with soul.',
+        alt: 'Koderi — code with character',
+      },
+      twitter: {
+        title: 'Koderi — web studio',
+        description: 'We create web solutions with love for code and design.',
+      },
+    },
     header: {
       nav: {
         about: 'About Us',
@@ -175,25 +231,25 @@ export const localizationData = {
           name: 'Yuliia Kovalenko',
           role: 'UI/UX Designer:',
           bio: 'I create intuitive and appealing interfaces that make product interaction straightforward and enjoyable.',
-          photo: '/team/yuliia.png',
+          photo: '/team/yuliia.webp',
         },
         {
           name: 'Anton Kulchytskyi',
           role: 'Frontend Developer:',
           bio: 'Our frontend specialist transforms design into a live, interactive website, ensuring speed and responsiveness.',
-          photo: '/team/anton.png',
+          photo: '/team/anton.webp',
         },
         {
           name: 'Natali Kapii',
           role: 'QA Engineer:',
           bio: 'Responsible for identifying and eliminating bugs, guaranteeing flawless operation of all features and product stability.',
-          photo: '/team/natali.png',
+          photo: '/team/natali.webp',
         },
         {
           name: 'Sergii Bezrukov',
           role: 'DevOps Engineer:',
           bio: 'Ensures smooth and secure infrastructure by automating deployments and proactively managing system performance.',
-          photo: '/team/sergii.png',
+          photo: '/team/sergii.webp',
         },
       ],
     },
@@ -271,8 +327,10 @@ export const localizationData = {
     reviews: { title: 'Customer Reviews' },
     form: {
       title: 'Let`s discuss your project',
-      desc1: 'Whether you`re planning a simple landing page or a full-featured web product — we`d love to hear from you.',
-      desc2: 'Fill out the form below, share some details, and we`ll get back to you shortly with next steps.',
+      desc1:
+        'Whether you`re planning a simple landing page or a full-featured web product — we`d love to hear from you.',
+      desc2:
+        'Fill out the form below, share some details, and we`ll get back to you shortly with next steps.',
       desc3: 'Let`s build something great together!',
       subtitle: 'Get a free consultation',
       name: 'Name',
@@ -280,6 +338,10 @@ export const localizationData = {
       email: 'Email',
       emailPlaceholder: 'exempl@gmail.com',
       messagePlaceholder: 'Tell us about your idea',
+      sending: 'Sending...',
+      success:
+        '✅ Message sent! We will get back to you shortly.',
+      error: '❌ Something went wrong. Please try again later.',
       submit: 'Send a request',
     },
     contact: {

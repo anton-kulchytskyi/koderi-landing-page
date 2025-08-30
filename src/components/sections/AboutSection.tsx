@@ -45,39 +45,25 @@ const AboutSection = ({ locale }: AboutSectionProps) => {
           {t.about.team.map((member, index) => (
             <div
               key={index}
-              className="relative rounded-2xl p-6 bg-white"
+              className="relative rounded-2xl min-w-full flex-[0_0_100%] lg:min-w-1/2 lg:flex-[0_0_50%] 2xl:min-w-1/4 2xl:flex-[0_0_25%] h-[800px] space-y-4"
             >
-              {/* Верхній правий кут */}
-              {/* <Image
-                src="/upper-corner.png"
-                alt="upper-corner"
-                width={96}
-                height={96}
-                className="absolute top-0 right-0 w-24 h-24 pointer-events-none select-none"
-              /> */}
-
-              {/* Нижній лівий кут */}
-              {/* <Image
-                src="/bottom-corner.png"
-                alt="bottom-corner"
-                width={96}
-                height={96}
-                className="absolute bottom-0 left-0 w-24 h-24 pointer-events-none select-none"
-              /> */}
-              <div className="w-12 h-12 mb-6 flex items-center justify-center">
-                {/* <Image
-                  src={serviceIcons[index]}
-                  alt={service.title}
-                  width={48}
-                  height={48}
-                  className="object-contain"
-                /> */}
+              <div className="w-full h-[600px] flex items-center justify-center rounded-t-lg">
+                <Image
+                  src={member.photo}
+                  alt={member.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover rounded-t-lg pb-[200px]"
+                />
+                <div
+                  className="absolute bottom-[200px] left-0 right-0 p-4 flex items-center"
+                  style={{ backgroundColor: 'rgba(255, 255, 255, 0.60)' }}
+                >
+                  <h3>{member.name}</h3>
+                </div>
               </div>
-              <h4 className="pb-4 lg:pb-6">{member.name}</h4>
-              <p className="text-[var(--grey-100)] text-sm leading-relaxed">
-                {member.role}
-              </p>
-              <p className="text-[var(--grey-100)] text-sm leading-relaxed">
+              <h4 className="text-[var(--white)]">{member.role}</h4>
+              <p className="text-[var(--white)] text-base leading-relaxed">
                 {member.bio}
               </p>
             </div>

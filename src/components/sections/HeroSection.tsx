@@ -17,7 +17,7 @@ const HeroSection = ({ locale }: HeroSectionProps) => {
       {/* Background */}
       <div
         className="absolute inset-0 -z-10 bg-cover bg-center"
-        style={{ backgroundImage: 'url("/hero-bg.png")' }}
+        style={{ backgroundImage: 'url("/hero/hero-bg.webp")' }}
       />
 
       <div className="relative z-20 w-full px-4 lg:px-12 2xl:px-28 pt-24">
@@ -81,7 +81,7 @@ const HeroSection = ({ locale }: HeroSectionProps) => {
                 }}
               >
                 <Image
-                  src="/hero-img.png"
+                  src="/hero/hero-img.webp"
                   alt="Hero Image"
                   width={500}
                   height={300}

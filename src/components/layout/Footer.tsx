@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Locale, getTranslations } from '@/lib/getTranslations';
 import { ContactsBlock } from '../common';
-// import { InstagramIcon, TelegramIcon, WhatsAppIcon } from '../icons';
 
 type Props = {
   locale: Locale;
@@ -21,7 +20,7 @@ const Footer = ({ locale }: Props) => {
 
   return (
     <footer className="bg-gray-900 text-gray-300 py-10">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
+      <div className="w-full px-4 lg:px-12 2xl:px-28 flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
         {/* Лого + копірайт */}
         <div className="flex flex-col items-center md:items-start">
           <Image

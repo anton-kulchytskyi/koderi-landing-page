@@ -10,10 +10,10 @@ const ServicesSection = ({ locale }: ServicesSectionProps) => {
   const t = getTranslations(locale);
 
   const serviceIcons = [
-    '/design-icon.svg',
-    '/landing-icon.svg',
-    '/web-icon.svg',
-    '/ai-icon.svg',
+    '/services/design-icon.svg',
+    '/services/landing-icon.svg',
+    '/services/web-icon.svg',
+    '/services/ai-icon.svg',
   ];
 
   return (
@@ -23,7 +23,6 @@ const ServicesSection = ({ locale }: ServicesSectionProps) => {
     >
       <div className="w-full px-4 lg:px-12 2xl:px-28">
         {/* Заголовок */}
-
         <h2 className="mb-6 lg:mb-8">{t.services.title}</h2>
 
         {/* Сітка сервісів */}
@@ -35,7 +34,7 @@ const ServicesSection = ({ locale }: ServicesSectionProps) => {
             >
               {/* Верхній правий кут */}
               <Image
-                src="/upper-corner.png"
+                src="/services/upper-corner.png"
                 alt="upper-corner"
                 width={96}
                 height={96}
@@ -44,7 +43,7 @@ const ServicesSection = ({ locale }: ServicesSectionProps) => {
 
               {/* Нижній лівий кут */}
               <Image
-                src="/bottom-corner.png"
+                src="/services/bottom-corner.png"
                 alt="bottom-corner"
                 width={96}
                 height={96}

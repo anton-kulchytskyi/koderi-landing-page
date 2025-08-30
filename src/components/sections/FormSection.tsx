@@ -36,12 +36,12 @@ const FormSection = ({ locale }: FormSectionProps) => {
       });
 
       if (res.ok) {
-        setStatus('✅ Повідомлення надіслано у Telegram');
+        setStatus(t.form.success);
         setFormData({ name: '', email: '', message: '' });
       } else {
         const data = await res.json().catch(() => ({}));
-        console.log(data, 'error response');
-        setStatus(`❌ Помилка: ${data?.error ?? 'не вдалося відправити'}`);
+        // console.log(data, 'error response');
+        setStatus(t.form.error || data.error || 'Ups... try later.');
       }
     } catch (e: unknown) {
       if (e instanceof Error) {
@@ -49,7 +49,7 @@ const FormSection = ({ locale }: FormSectionProps) => {
       } else {
         console.log(String(e));
       }
-      setStatus('❌ Мережева помилка');
+      setStatus(t.form.error || 'An unexpected error occurred.');
     } finally {
       setIsSending(false);
     }
@@ -71,11 +71,10 @@ const FormSection = ({ locale }: FormSectionProps) => {
       className="py-8 lg:py-12 2xl:py-20"
     >
       <div className="w-full px-4 lg:px-12 2xl:px-28">
-        {/* <div className="bg-white rounded-lg shadow-lg overflow-hidden"> */}
         <div className="flex flex-col lg:flex-row gap-48">
           {/* Left side - additional info */}
 
-          <div className="lg:w-1/2 bg-gray-50 space-y-8">
+          <div className="lg:w-1/2 space-y-8">
             <h2>{t.form.title}</h2>
             <h6>{t.form.desc1}</h6>
             <h6>{t.form.desc2}</h6>
@@ -92,7 +91,7 @@ const FormSection = ({ locale }: FormSectionProps) => {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block mb-2"
                 >
                   {t.form.name}
                 </label>
@@ -103,7 +102,7 @@ const FormSection = ({ locale }: FormSectionProps) => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder={t.form.namePlaceholder}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-start)] focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 border border-[var(--grey-30)] rounded-lg focus:ring-2 focus:ring-[var(--primary-start)] focus:border-transparent outline-none transition-all"
                   required
                 />
               </div>
@@ -111,7 +110,7 @@ const FormSection = ({ locale }: FormSectionProps) => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block mb-2"
                 >
                   {t.form.email}
                 </label>
@@ -122,7 +121,7 @@ const FormSection = ({ locale }: FormSectionProps) => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder={t.form.emailPlaceholder}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-start)] focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 border border-[var(--grey-30)] rounded-lg focus:ring-2 focus:ring-[var(--primary-start)] focus:border-transparent outline-none transition-all"
                   required
                 />
               </div>
@@ -135,7 +134,7 @@ const FormSection = ({ locale }: FormSectionProps) => {
                   onChange={handleChange}
                   placeholder={t.form.messagePlaceholder}
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-start)] focus:border-transparent outline-none transition-all resize-vertical"
+                  className="w-full px-4 py-3 border border-[var(--grey-30)] rounded-lg focus:ring-2 focus:ring-[var(--primary-start)] focus:border-transparent outline-none transition-all resize-vertical"
                   required
                 />
               </div>
@@ -145,8 +144,7 @@ const FormSection = ({ locale }: FormSectionProps) => {
                   type="submit"
                   className="w-full lg:w-auto"
                 >
-                  {isSending ? 'Відправляю…' : t.form.submit}
-                  {/* {t.form.submit} */}
+                  {isSending ? t.form.sending : t.form.submit}
                 </Button>
               </div>
               {status && <p className="text-sm">{status}</p>}

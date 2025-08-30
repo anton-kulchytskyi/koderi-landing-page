@@ -32,28 +32,27 @@ const Header = ({ locale }: HeaderProps) => {
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
             ? 'backdrop-blur-md bg-gray-500/60 shadow-lg'
-            : 'bg-transparent'
+            : 'bg-transparent py-4'
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="w-full px-4 lg:px-12 2xl:px-28 flex items-center justify-between">
+        <div className="w-full px-4 lg:px-12 2xl:px-28 py-8 flex items-center justify-between">
           {/* Logo */}
           <Link
             href={`/${locale}`}
-            className="flex items-center space-x-2"
+            className="flex items-center relative w-24 xl:w-64 h-12 xl:h-24"
           >
             <Image
               src="/logo.png"
               alt="Koderi Logo"
-              // fill
-              width={256}
-              height={96}
-              className="w-64 lg:w-24 xl:w-64"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              // className="w-64 lg:w-24 xl:w-64"
             />
           </Link>
 
@@ -63,13 +62,14 @@ const Header = ({ locale }: HeaderProps) => {
               locale={locale}
               className="hidden lg:flex"
             />
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center justify-between">
               <LanguageSwitcher />
               <Button
                 as="link"
                 href={`/${locale}#contact`}
                 onClick={() => setIsMenuOpen(false)}
                 display="hidden lg:flex"
+                className="ml-4"
               >
                 {t.header.cta}
               </Button>

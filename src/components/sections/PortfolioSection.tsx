@@ -10,13 +10,21 @@ interface PortfolioSectionProps {
 }
 
 const slides = [
-  { src: '/portfolio-1.webp', title: 'Norse Yacht', subtitle: 'Online store' },
   {
-    src: '/portfolio-2.webp',
+    src: '/portfolio/portfolio-1.webp',
+    title: 'Norse Yacht',
+    subtitle: 'Online store',
+  },
+  {
+    src: '/portfolio/portfolio-2.webp',
     title: 'Supervise Money',
     subtitle: 'Web Application',
   },
-  { src: '/portfolio-3.webp', title: 'Uplevel', subtitle: 'Corporate Website' },
+  {
+    src: '/portfolio/portfolio-3.webp',
+    title: 'Uplevel',
+    subtitle: 'Corporate Website',
+  },
 ];
 
 const PortfolioSection = ({ locale }: PortfolioSectionProps) => {
@@ -34,7 +42,7 @@ const PortfolioSection = ({ locale }: PortfolioSectionProps) => {
             key={i}
             className="min-w-full flex-[0_0_calc(100%-16px)] px-2 lg:min-w-1/2 lg:flex-[0_0_calc(50%-16px)] 2xl:min-w-1/3 2xl:flex-[0_0_calc(33.333%-16px)] mx-2"
           >
-            <div className="rounded-2xl overflow-hidden relative w-full h-[540px]">
+            <div className="rounded-2xl overflow-hidden relative w-full h-[350px] lg:h-[540px]">
               <Image
                 src={slide.src}
                 alt={slide.title}

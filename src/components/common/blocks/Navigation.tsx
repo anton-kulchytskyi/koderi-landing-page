@@ -26,9 +26,9 @@ const Navigation = ({
 
   const navContainerClasses = isMobileMenu
     ? `flex flex-col items-center justify-center space-y-6`
-    : `flex items-center space-x-8`;
+    : `flex items-center space-x-6`;
 
-  const navLinkClasses = `text-[var(--white)] font-bold hover:text-[var(--focused)] hover:border-b-2 hover:border-[var(--focused)] pb-1 transition-all duration-200`;
+  const navLinkClasses = `text-[var(--white)] hover:text-[var(--focused)] hover:border-b-2 hover:border-[var(--focused)] pb-1 transition-all duration-200`;
 
   return (
     <nav className={`${navContainerClasses} ${className}`}>

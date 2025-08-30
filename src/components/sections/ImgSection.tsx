@@ -4,7 +4,7 @@ const ImgSection = () => {
   return (
     <div className="relative w-full aspect-[16/9]">
       <Image
-        src="/section-img.png"
+        src="/section-img.webp"
         alt="Sample"
         fill
         className="object-cover" // розтягнеться на весь контейнер

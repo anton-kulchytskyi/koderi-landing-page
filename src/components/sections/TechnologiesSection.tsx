@@ -25,7 +25,7 @@ const TechnologiesSection = ({ locale }: Props) => {
                   src={tech.icon}
                   alt={tech.name}
                   fill
-                  className="object-contain filter grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition"
+                  className="object-contain lg:filter lg:grayscale opacity-100 lg:opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition"
                 />
               </div>
               <span className="text-xs font-medium text-gray-700 text-center truncate w-full px-1">
