@@ -15,10 +15,44 @@ const FormSection = ({ locale }: FormSectionProps) => {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSending, setIsSending] = useState(false);
+  const [status, setStatus] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
+    setIsSending(true);
+    setStatus(null);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          website: '', // honeypot поле (див. нижче)
+        }),
+      });
+
+      if (res.ok) {
+        setStatus('✅ Повідомлення надіслано у Telegram');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        const data = await res.json().catch(() => ({}));
+        console.log(data, 'error response');
+        setStatus(`❌ Помилка: ${data?.error ?? 'не вдалося відправити'}`);
+      }
+    } catch (e: unknown) {
+      if (e instanceof Error) {
+        console.log(e.toString());
+      } else {
+        console.log(String(e));
+      }
+      setStatus('❌ Мережева помилка');
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const handleChange = (
@@ -94,12 +128,6 @@ const FormSection = ({ locale }: FormSectionProps) => {
               </div>
 
               <div>
-                {/* <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Повідомлення
-                </label> */}
                 <textarea
                   id="message"
                   name="message"
@@ -117,16 +145,11 @@ const FormSection = ({ locale }: FormSectionProps) => {
                   type="submit"
                   className="w-full lg:w-auto"
                 >
-                  {t.form.submit}
+                  {isSending ? 'Відправляю…' : t.form.submit}
+                  {/* {t.form.submit} */}
                 </Button>
               </div>
-
-              {/* <button
-                type="submit"
-                className="w-full bg-[var(--primary-start)] text-white font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all duration-200 focus:ring-2 focus:ring-[var(--primary-start)] focus:ring-offset-2"
-              >
-                {t.form.submit}
-              </button> */}
+              {status && <p className="text-sm">{status}</p>}
             </form>
           </div>
         </div>
