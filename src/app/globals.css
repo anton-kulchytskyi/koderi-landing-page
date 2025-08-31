@@ -36,7 +36,7 @@
 
   @layer base {
     h1 {
-      @apply font-bold text-6xl leading-[1.2];
+      @apply font-bold text-[40px] sm:text-6xl leading-[1.2];
     }
     h2 {
       @apply font-bold leading-[1.2] text-4xl lg:text-[40px] xl:text-5xl text-[var(--grey-100)];

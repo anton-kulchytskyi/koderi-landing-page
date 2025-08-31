@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Дозволити доступ до локалізованих сторінок
+Allow: /uk/
+Allow: /en/
+
+# Заборонити доступ до службових папок
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Вказати розташування sitemap
+Sitemap: https://koderi.netlify.app/sitemap.xml
+
+# Додаткові правила для пошукових ботів
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

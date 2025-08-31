@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/', // Шлях, з якого перенаправляємо
-        destination: '/uk', // Куди перенаправляємо
+        destination: '/en', // Куди перенаправляємо
         permanent: true, // Вказуємо, що це постійне перенаправлення (301)
       },
     ];

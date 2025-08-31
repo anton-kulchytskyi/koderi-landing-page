@@ -1,31 +1,34 @@
 'use client';
 import { Locale, getTranslations } from '@/lib/getTranslations';
-import EmblaCarousel from '../common/ui/EmblaCarousel';
 import Image from 'next/image';
-import { Button } from '../common';
+import { Button, EmblaCarousel } from '../common';
 import { UpArrowIcon } from '../icons';
+import { portfolioSlidesData as slides } from '@/content/portfolioSlidesData';
 
 interface PortfolioSectionProps {
   locale: Locale;
 }
 
-const slides = [
-  {
-    src: '/portfolio/portfolio-1.webp',
-    title: 'Norse Yacht',
-    subtitle: 'Online store',
-  },
-  {
-    src: '/portfolio/portfolio-2.webp',
-    title: 'Supervise Money',
-    subtitle: 'Web Application',
-  },
-  {
-    src: '/portfolio/portfolio-3.webp',
-    title: 'Uplevel',
-    subtitle: 'Corporate Website',
-  },
-];
+// const slides = [
+//   {
+//     src: '/portfolio/portfolio-1.webp',
+//     title: 'Norse Yacht',
+//     subtitle: 'Online store',
+//     slug: '/norse-yacht',
+//   },
+//   {
+//     src: '/portfolio/portfolio-2.webp',
+//     title: 'Supervise Money',
+//     subtitle: 'Web Application',
+//     slug: '/supervise-money',
+//   },
+//   {
+//     src: '/portfolio/portfolio-3.webp',
+//     title: 'Uplevel',
+//     subtitle: 'Corporate Website',
+//     slug: '/uplevel-corporate',
+//   },
+// ];
 
 const PortfolioSection = ({ locale }: PortfolioSectionProps) => {
   return (
@@ -62,7 +65,11 @@ const PortfolioSection = ({ locale }: PortfolioSectionProps) => {
                 </div>
 
                 {/* Кнопка справа */}
-                <Button className="ml-auto">
+                <Button
+                  as="link"
+                  href={`/${locale}${slide.slug}`}
+                  className="ml-auto"
+                >
                   <UpArrowIcon />
                 </Button>
               </div>

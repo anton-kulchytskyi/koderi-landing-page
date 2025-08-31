@@ -1,4 +1,6 @@
-import { localizationData } from "@/content/localizationData";
+import { localizationData } from '@/content/localizationData';
+
+export const locales = ['uk', 'en'] as const;
 
 export type Locale = keyof typeof localizationData; // "uk" | "en"
 

@@ -1,5 +1,6 @@
 export { default as BurgerMenu } from './ui/BurgerMenu';
 export { default as Close } from './ui/Close';
+export { default as HomeIcon } from './ui/Home';
 export { default as NextArrowIcon } from './ui/NextArrowIcon';
 export { default as PrevArrowIcon } from './ui/PrevArrowIcon';
 export { default as UpArrowIcon } from './ui/UpArrowIcon';

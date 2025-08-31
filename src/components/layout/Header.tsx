@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { getTranslations, Locale } from '@/lib/getTranslations';
 import Image from 'next/image';
@@ -16,6 +17,8 @@ interface HeaderProps {
 const Header = ({ locale }: HeaderProps) => {
   const [scrollY, setScrollY] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === `/${locale}`;
   const t = getTranslations(locale);
 
   useEffect(() => {
@@ -29,14 +32,24 @@ const Header = ({ locale }: HeaderProps) => {
 
   const isScrolled = scrollY > 50;
 
+  let headerClass = '';
+
+  switch (true) {
+    case isScrolled:
+      headerClass = 'backdrop-blur-md bg-gray-500/60 shadow-lg';
+      break;
+    case isHome:
+      headerClass = 'bg-transparent py-4';
+      break;
+    default:
+      headerClass = 'bg-black py-4';
+      break;
+  }
+
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'backdrop-blur-md bg-gray-500/60 shadow-lg'
-            : 'bg-transparent py-4'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerClass}`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
@@ -74,7 +87,7 @@ const Header = ({ locale }: HeaderProps) => {
                 {t.header.cta}
               </Button>
               {/* Mobile Menu Button */}
-              <div className="w-12 h-12 rounded-lg shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] outline outline-offset-[-1px] outline-[var(--secondary)] flex justify-center items-center gap-2 lg:hidden">
+              <div className="w-12 h-12 rounded-lg shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] outline outline-offset-[-1px] outline-[var(--secondary)] flex justify-center items-center gap-2 lg:hidden ml-4">
                 <button
                   className="lg:hidden text-white"
                   onClick={() => setIsMenuOpen(!isMenuOpen)}

@@ -1,8 +1,8 @@
 'use client';
 import { Locale, getTranslations } from '@/lib/getTranslations';
-import EmblaCarousel from '../common/ui/EmblaCarousel';
 import { testimonials } from '@/content/testimonials';
 import Image from 'next/image';
+import { EmblaCarousel } from '../common';
 
 interface ReviewsSectionProps {
   locale: Locale;

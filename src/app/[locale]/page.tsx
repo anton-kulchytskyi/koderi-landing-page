@@ -1,12 +1,8 @@
-import HeroSection from '@/components/sections/HeroSection';
-
-// import TechnologiesSection from '@/components/sections/TechnologiesSection';
-
 import { Locale } from '@/lib/getTranslations';
 
 import {
   AboutSection,
-  FormSection,
+  HeroSection,
   ImgSection,
   PortfolioSection,
   ReviewsSection,
@@ -20,8 +16,7 @@ export default async function HomePage({
 }: {
   params: Promise<{ locale: Locale }>;
 }) {
-  const { locale } = await params; // 👈 важливо!
-  // const t = getTranslations(locale);
+  const { locale } = await params;
 
   return (
     <main className="relative">
@@ -33,7 +28,6 @@ export default async function HomePage({
       <TechnologiesSection locale={locale} />
       <ReviewsSection locale={locale} />
       <AboutSection locale={locale} />
-      <FormSection locale={locale} />
     </main>
   );
 }
