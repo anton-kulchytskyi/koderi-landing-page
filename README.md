@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Koderi — Creative Web Studio Landing Page
 
-## Getting Started
+Welcome to the official landing page for **Koderi** — a forward-thinking web studio crafting bespoke digital experiences with clarity, performance, and style.
 
-First, run the development server:
+---
+
+## ✨ Why Koderi?
+
+- 🎨 **Clarity in Design** — minimalistic and clean layouts, with polish down to every detail.
+- ⚡ **Performance-First Approach** — optimized loading, effortless navigation, and SEO-ready structures.
+- 🌍 **Multilingual by Nature** — built for Ukrainian and English audiences with effortless locale switching.
+- 📂 **Dynamic Portfolio** — scalable project showcase that's easy to update and maintain.
+
+---
+
+## 📑 Project Highlights
+
+This site includes:
+
+- A robust **projects.json** data source to drive multilingual projects.
+- Dynamic routes like `/en/[slug]` and `/uk/[slug]` — automatically pulling in content based on locale and slug.
+- A polished hero experience on the homepage, with animated interactions powered by Framer Motion.
+- A highly performant, reusable UI built with Tailwind CSS and Next.js App Router.
+- Essential SEO tools — `robots.txt`, `sitemap.xml`, meta tags — all configured for streamlined deployment.
+
+---
+
+## 📂 Visual Overview
+
+```bash
+├── app/                    # Next.js App Router (locale and slug based routing)
+│   ├── [locale]/           # Language-aware pages (en, uk)
+│   └── [slug]/             # Project-specific dynamic pages
+├── components/             # Reusable components: Header, Footer, Breadcrumbs, etc.
+├── public/                 # Static files: images, robots.txt, sitemap.xml, favicon, etc.
+├── projects.json           # Core project content with translations and sections
+└── styles/                 # Global and theme-based styles
+```
+
+## 🛠️ Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/anton-kulchytskyi/koderi-landing-page.git
+cd koderi-landing
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site will be available at: http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Ready for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Deploy to any Node.js–compatible platform.
+For the smoothest experience, push your repo to GitHub and connect it to Vercel — no additional config required.
 
-## Learn More
+## 📌 Expand & Customize
 
-To learn more about Next.js, take a look at the following resources:
+- Add Case Studies / Blog for storytelling and SEO
+- Integrate Contact Form with email/CRM
+- Add Advanced SEO Tools (Open Graph images, structured data, analytics)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Technology           | Role                                       |
+| -------------------- | ------------------------------------------ |
+| Next.js (App Router) | Framework powering structure and SSR/SSG   |
+| React                | Component-based UI logic and state         |
+| Tailwind CSS         | Atomic styling for clean, fast UI          |
+| Framer Motion        | Sleek UI animations and scroll transitions |
+| TypeScript           | Safe, maintainable JavaScript              |
 
-## Deploy on Vercel
+## 👨‍💻 About Koderi
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+At Koderi, we believe that every pixel should serve a purpose.
+We deliver websites and apps that blend simplicity, speed, and scalability — helping brands succeed in the digital landscape.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+If you'd like to integrate, collaborate, or just say hi — we're ready.
+
+## 📄 License
+
+This project is licensed under the MIT License — built to be shared, forked, and improved.

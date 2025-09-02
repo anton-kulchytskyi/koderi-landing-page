@@ -20,6 +20,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  trailingSlash: false,
+  compress: true,
 };
 
 export default nextConfig;
