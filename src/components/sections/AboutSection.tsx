@@ -1,21 +1,12 @@
 import { Locale, getTranslations } from '@/lib/getTranslations';
 import Image from 'next/image';
 
-// import Image from 'next/image';
-
 interface AboutSectionProps {
   locale: Locale;
 }
 
 const AboutSection = ({ locale }: AboutSectionProps) => {
   const t = getTranslations(locale);
-
-  // const serviceIcons = [
-  //   '/design-icon.svg',
-  //   '/landing-icon.svg',
-  //   '/web-icon.svg',
-  //   '/ai-icon.svg',
-  // ];
 
   return (
     <section

@@ -2,6 +2,8 @@ import { Locale } from '@/lib/getTranslations';
 import { projects } from '@/content/projects';
 import { Breadcrumbs } from '@/components/common';
 import Image from 'next/image';
+import NotFound from '../not-found';
+import { FormSection } from '@/components/layout';
 
 type Props = {
   params: Promise<{ locale: Locale; slug: string }>;
@@ -11,7 +13,8 @@ export default async function ProjectPage({ params }: Props) {
   const { locale, slug } = await params;
   const project = projects.find((p) => p.slug === slug);
 
-  if (!project) return <div>Not found</div>;
+  // if (!project) return <div>Not found</div>;
+  if (!project) return NotFound();
 
   const t = project.translations[locale as 'en' | 'uk'];
 
@@ -128,6 +131,8 @@ export default async function ProjectPage({ params }: Props) {
           />
         </div>
       </section>
+
+      <FormSection locale={locale} />
 
       {/* {t.sections.map((section) => (
         <section

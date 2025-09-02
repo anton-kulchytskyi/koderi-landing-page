@@ -10,6 +10,7 @@ import {
   TechnologiesSection,
   WorkProcess,
 } from '@/components/sections';
+import { FormSection } from '@/components/layout';
 
 export default async function HomePage({
   params,
@@ -28,6 +29,7 @@ export default async function HomePage({
       <TechnologiesSection locale={locale} />
       <ReviewsSection locale={locale} />
       <AboutSection locale={locale} />
+      <FormSection locale={locale} />
     </main>
   );
 }

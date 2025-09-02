@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { Space_Grotesk, Inter } from 'next/font/google';
 import { Locale, getTranslations } from '@/lib/getTranslations';
-import { Footer, FormSection, Header } from '@/components/layout';
+import { Footer, Header } from '@/components/layout';
 
 export async function generateStaticParams() {
   return [{ locale: 'uk' }, { locale: 'en' }];
@@ -87,7 +87,6 @@ export default async function LocaleLayout({
       >
         <Header locale={locale} />
         {children}
-        <FormSection locale={locale} />
         <Footer locale={locale} />
       </body>
     </html>

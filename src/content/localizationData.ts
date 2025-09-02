@@ -175,6 +175,10 @@ export const localizationData = {
         email: 'koderi.dev@gmail.com',
       },
     },
+    notFound: {
+      title: 'Ми не змогли знайти цю сторінку, але можемо створити її для вас.',
+      cta: 'Повернутися на головну',
+    },
   },
   en: {
     meta: {
@@ -339,8 +343,7 @@ export const localizationData = {
       emailPlaceholder: 'exempl@gmail.com',
       messagePlaceholder: 'Tell us about your idea',
       sending: 'Sending...',
-      success:
-        '✅ Message sent! We will get back to you shortly.',
+      success: '✅ Message sent! We will get back to you shortly.',
       error: '❌ Something went wrong. Please try again later.',
       submit: 'Send a request',
     },
@@ -350,6 +353,10 @@ export const localizationData = {
         phone: '+38 (097) 943-80-90',
         email: 'koderi.dev@gmail.com',
       },
+    },
+    notFound: {
+      title: 'We couldn`t find this page, but we can build one for you.',
+      cta: 'Return to home',
     },
   },
 } as const;
