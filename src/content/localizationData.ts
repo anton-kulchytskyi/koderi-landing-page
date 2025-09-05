@@ -162,9 +162,18 @@ export const localizationData = {
       emailPlaceholder: 'exempl@gmail.com',
       messagePlaceholder: 'Розкажіть нам про свою ідею',
       sending: 'Відправка...',
-      success:
-        '✅ Повідомлення надіслано! Ми зв’яжемосясь з вами найближчим часом.',
-      error: '❌ Сталася помилка. Спробуйте ще раз пізніше.',
+      success: {
+        title: 'Запит успішно надіслано',
+        message:
+          'Наша команда розгляне ваш запит і зв’яжеться з вами якомога швидше.',
+        cta: 'До головної',
+      },
+      error: {
+        title: 'Щось пішло не так',
+        message:
+          'На жаль, ваш запит не вдалося надіслати. Будь ласка, спробуйте пізніше.',
+        cta: 'До головної',
+      },
       submit: 'Надіслати заявку',
     },
 
@@ -343,8 +352,18 @@ export const localizationData = {
       emailPlaceholder: 'exempl@gmail.com',
       messagePlaceholder: 'Tell us about your idea',
       sending: 'Sending...',
-      success: '✅ Message sent! We will get back to you shortly.',
-      error: '❌ Something went wrong. Please try again later.',
+      success: {
+        title: 'Request Sent Successfully',
+        message:
+          'Our team will review your request and get back to you as soon as possible.',
+        cta: 'Go to homepage',
+      },
+      error: {
+        title: 'Something Went Wrong',
+        message:
+          'Unfortunately, your request could not be sent. Please try again later. went wrong. Please try again later.',
+        cta: 'Go to homepage',
+      },
       submit: 'Send a request',
     },
     contact: {

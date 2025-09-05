@@ -2,6 +2,7 @@ import { Locale } from '@/lib/getTranslations';
 
 import {
   AboutSection,
+  FormSection,
   HeroSection,
   ImgSection,
   PortfolioSection,
@@ -10,7 +11,6 @@ import {
   TechnologiesSection,
   WorkProcess,
 } from '@/components/sections';
-import { FormSection } from '@/components/layout';
 
 export default async function HomePage({
   params,

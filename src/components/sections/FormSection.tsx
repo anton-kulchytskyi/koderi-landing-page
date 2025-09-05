@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 import { Locale, getTranslations } from '@/lib/getTranslations';
 import { useState } from 'react';
-import { Button } from '../common';
+import { Button, StatusModal } from '../common';
 
 type FormSectionProps = {
   locale: Locale;
@@ -16,41 +17,31 @@ const FormSection = ({ locale }: FormSectionProps) => {
   });
 
   const [isSending, setIsSending] = useState(false);
-  const [status, setStatus] = useState<string | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalType, setModalType] = useState<'success' | 'error'>('success');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
-    setStatus(null);
 
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          website: '', // honeypot поле (див. нижче)
-        }),
+        body: JSON.stringify({ ...formData, website: '' }),
       });
 
       if (res.ok) {
-        setStatus(t.form.success);
+        setModalType('success');
         setFormData({ name: '', email: '', message: '' });
       } else {
         const data = await res.json().catch(() => ({}));
-        // console.log(data, 'error response');
-        setStatus(t.form.error || data.error || 'Ups... try later.');
+        setModalType('error');
       }
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        console.log(e.toString());
-      } else {
-        console.log(String(e));
-      }
-      setStatus(t.form.error || 'An unexpected error occurred.');
+    } catch (e) {
+      setModalType('error');
     } finally {
+      setModalOpen(true);
       setIsSending(false);
     }
   };
@@ -59,10 +50,7 @@ const FormSection = ({ locale }: FormSectionProps) => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -72,8 +60,7 @@ const FormSection = ({ locale }: FormSectionProps) => {
     >
       <div className="w-full px-4 lg:px-12 2xl:px-28">
         <div className="flex flex-col lg:flex-row gap-48">
-          {/* Left side - additional info */}
-
+          {/* Left side */}
           <div className="lg:w-1/2 space-y-8">
             <h2>{t.form.title}</h2>
             <h6>{t.form.desc1}</h6>
@@ -81,7 +68,7 @@ const FormSection = ({ locale }: FormSectionProps) => {
             <h6>{t.form.desc3}</h6>
           </div>
 
-          {/* Right side - form */}
+          {/* Right side */}
           <div className="lg:w-1/2">
             <h4>{t.form.subtitle}</h4>
             <form
@@ -147,12 +134,18 @@ const FormSection = ({ locale }: FormSectionProps) => {
                   {isSending ? t.form.sending : t.form.submit}
                 </Button>
               </div>
-              {status && <p className="text-sm">{status}</p>}
             </form>
           </div>
         </div>
       </div>
-      {/* </div> */}
+
+      {/* Status Modal */}
+      <StatusModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        type={modalType}
+        locale={locale}
+      />
     </section>
   );
 };

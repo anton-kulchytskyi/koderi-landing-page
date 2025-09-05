@@ -6,3 +6,4 @@ export { default as PortfolioSection } from './PortfolioSection';
 export { default as TechnologiesSection } from './TechnologiesSection';
 export { default as ReviewsSection } from './ReviewsSection';
 export { default as AboutSection } from './AboutSection';
+export { default as FormSection } from './FormSection';
