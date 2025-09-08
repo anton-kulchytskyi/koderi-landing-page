@@ -3,7 +3,7 @@ import { projects } from '@/content/projects';
 import { Breadcrumbs } from '@/components/common';
 import Image from 'next/image';
 import NotFound from '../not-found';
-import { FormSection } from '@/components/layout';
+import { FormSection } from '@/components/sections';
 
 type Props = {
   params: Promise<{ locale: Locale; slug: string }>;
@@ -133,18 +133,6 @@ export default async function ProjectPage({ params }: Props) {
       </section>
 
       <FormSection locale={locale} />
-
-      {/* {t.sections.map((section) => (
-        <section
-          key={section.id}
-          className="mt-8"
-        >
-          <h3 className="text-2xl font-semibold">{section.title}</h3>
-          {section.content && (
-            <p className="mt-2 text-gray-700">{section.content}</p>
-          )}
-        </section>
-      ))} */}
     </main>
   );
 }
