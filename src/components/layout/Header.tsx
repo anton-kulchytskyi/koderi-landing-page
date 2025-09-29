@@ -39,10 +39,10 @@ const Header = ({ locale }: HeaderProps) => {
       headerClass = 'backdrop-blur-md bg-gray-500/60 shadow-lg';
       break;
     case isHome:
-      headerClass = 'bg-transparent py-4';
+      headerClass = 'bg-transparent';
       break;
     default:
-      headerClass = 'bg-black py-4';
+      headerClass = 'bg-black';
       break;
   }
 
@@ -50,22 +50,21 @@ const Header = ({ locale }: HeaderProps) => {
     <>
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerClass}`}
-        initial={{ y: -100 }}
+        initial={{ y: -120 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="w-full px-4 lg:px-12 2xl:px-28 py-8 flex items-center justify-between">
+        <div className="w-full px-4 lg:px-12 2xl:px-28 py-4 flex items-center justify-between">
           {/* Logo */}
           <Link
             href={`/${locale}`}
             className="flex items-center relative w-24 xl:w-64 h-12 xl:h-24"
           >
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="Koderi Logo"
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              // className="w-64 lg:w-24 xl:w-64"
+              sizes="(max-width: 768px) 96px, (max-width: 1200px) 128px, 256px"
             />
           </Link>
 

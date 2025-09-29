@@ -20,10 +20,12 @@ const WorkProcess = ({ locale }: Props) => {
           {t.workProcess.steps.map((step) => (
             <div
               key={step.number}
-              className="flex flex-col gap-6 md:border-r border-[var(--primary-start)] pr-4"
+              className="flex flex-col md:border-r border-[var(--primary-start)] pr-4"
             >
-              <h2 className="text-[var(--primary-start)]">{step.number}</h2>
-              <h4>{step.title}</h4>
+              <h2 className="text-[var(--primary-start)] pb-2 lg:pb-6">
+                {step.number}
+              </h2>
+              <h4 className="pb-2 lg:pb-4">{step.title}</h4>
               <ul className="leading-normal space-y-2">
                 {step.items.map((item, i) => (
                   <li key={i}>{item}</li>

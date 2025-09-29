@@ -23,7 +23,7 @@ const LanguageSwitcher = () => {
           'w-12 h-12 px-4 py-2 rounded-lg flex justify-center items-center gap-2 transition-all duration-200',
           isActive
             ? 'shadow-[0px_4px_4px_rgba(0,0,0,0.25)] outline outline-offset-[-1px] outline-[var(--secondary)] text-[var(--white)] font-medium'
-            : 'outline outline-offset-[-1px] outline-[var(--grey-50)] text-[var(--grey-50)] hover:outline-[var(--secondary)] hover:text-[var(--secondary)]'
+            : 'outline outline-offset-[-1px] outline-[var(--grey-20)] text-[var(--grey-20)] hover:outline-[var(--secondary)] hover:text-[var(--secondary)]'
         );
 
         const ButtonContent = (

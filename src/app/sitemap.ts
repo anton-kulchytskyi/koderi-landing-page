@@ -18,14 +18,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Сторінки портфоліо для кожної локалі
   locales.forEach((locale) => {
-    portfolioItems.forEach((item) => {
-      pages.push({
-        url: `${baseUrl}/${locale}${item.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.8,
+    portfolioItems
+      .filter((item) => item.slug && !item.slug.startsWith('#'))
+      .forEach((item) => {
+        pages.push({
+          url: `${baseUrl}/${locale}${item.slug}`,
+          lastModified: new Date(),
+          changeFrequency: 'monthly',
+          priority: 0.8,
+        });
       });
-    });
   });
 
   return pages;

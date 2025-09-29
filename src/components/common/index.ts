@@ -6,3 +6,4 @@ export { default as ContactsBlock } from './blocks/ContactsBlock';
 export { default as LanguageSwitcher } from './blocks/LanguageSwitcher';
 export { default as Navigation } from './blocks/Navigation';
 export { default as StatusModal } from './blocks/StatusModal';
+export { default as IconSlideshow } from './blocks/IconSlideshow';

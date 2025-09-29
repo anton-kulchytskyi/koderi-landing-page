@@ -7,7 +7,7 @@ const ImgSection = () => {
         src="/section-img.webp"
         alt="Sample"
         fill
-        className="object-cover" // розтягнеться на весь контейнер
+        className="object-cover"
         priority
       />
     </div>

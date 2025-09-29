@@ -30,7 +30,7 @@ const ServicesSection = ({ locale }: ServicesSectionProps) => {
           {t.services.items.map((service, index) => (
             <div
               key={index}
-              className="relative rounded-2xl p-6 bg-white"
+              className="relative rounded-2xl p-4 lg:p-6 bg-white"
             >
               {/* Верхній правий кут */}
               <Image
@@ -49,7 +49,7 @@ const ServicesSection = ({ locale }: ServicesSectionProps) => {
                 height={96}
                 className="absolute bottom-0 left-0 w-24 h-24 pointer-events-none select-none"
               />
-              <div className="w-12 h-12 mb-6 flex items-center justify-center">
+              <div className="w-12 h-12 mb-4 lg:mb-6 flex items-center justify-center">
                 <Image
                   src={serviceIcons[index]}
                   alt={service.title}
@@ -58,7 +58,7 @@ const ServicesSection = ({ locale }: ServicesSectionProps) => {
                   className="object-contain"
                 />
               </div>
-              <h4 className="pb-4 lg:pb-6">{service.title}</h4>
+              <h4 className="pb-2 lg:pb-4">{service.title}</h4>
               <p className="text-[var(--grey-100)] text-sm leading-relaxed">
                 {service.description}
               </p>

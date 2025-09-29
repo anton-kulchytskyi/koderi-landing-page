@@ -56,19 +56,9 @@
   }
 }
 
-/* @theme inline {
-  --color-background: var(--white);
-  --color-foreground: var(--white);
-} */
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --primary: linear-gradient(135deg, #7F00FF 0%, #24C0F4 100%);
-  }
-} */
-
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 120px;
   overflow-x: hidden;
 }
 
