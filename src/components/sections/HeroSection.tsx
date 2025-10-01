@@ -37,12 +37,12 @@ const HeroSection = ({ locale }: HeroSectionProps) => {
 
   return (
     // delete bg-[var(--grey-100)] with image bg variant
-    <section className="relative min-h-screen overflow-hidden bg-[var(--grey-100)]">
+    <section className="relative min-h-screen overflow-hidden">
       {/* Image background */}
-      {/* <div
+      <div
         className="absolute inset-0 -z-10 bg-cover bg-center"
         style={{ backgroundImage: 'url("/hero/hero-bg.webp")' }}
-      /> */}
+      />
       <AnimatedBackground />
 
       <div className="relative z-20 w-full px-4 lg:px-12 2xl:px-28 pt-24">
