@@ -52,7 +52,8 @@ const ContactsBlock = ({ locale, alignClassName = '' }: ContactsBlockProps) => {
         </Button>
         <Button
           as="link"
-          href="/uk#services"
+          href="https://www.instagram.com/koderi.web/"
+          target="_blank"
           variant="icon"
           size="sm"
         >

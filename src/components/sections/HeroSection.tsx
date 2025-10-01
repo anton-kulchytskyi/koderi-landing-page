@@ -1,9 +1,15 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { getTranslations, Locale } from '@/lib/getTranslations';
+import { useRef } from 'react';
 import Image from 'next/image';
-import Button from '../common/ui/CustomButton';
+import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { SplitText } from 'gsap/SplitText';
+import { getTranslations, Locale } from '@/lib/getTranslations';
+import { AnimatedBackground, Button } from '../common';
+
+gsap.registerPlugin(useGSAP);
 
 interface HeroSectionProps {
   locale: Locale;
@@ -11,14 +17,33 @@ interface HeroSectionProps {
 
 const HeroSection = ({ locale }: HeroSectionProps) => {
   const t = getTranslations(locale);
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
+
+  useGSAP(
+    () => {
+      const split = SplitText.create('h1', { type: 'chars' });
+
+      gsap.from(split.chars, {
+        // <- selector text, scoped to this component!
+        opacity: 0,
+        y: 100,
+        ease: 'back',
+        duration: 1,
+        stagger: 0.1,
+      });
+    },
+    { scope: titleRef }
+  );
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      {/* Background */}
-      <div
+    // delete bg-[var(--grey-100)] with image bg variant
+    <section className="relative min-h-screen overflow-hidden bg-[var(--grey-100)]">
+      {/* Image background */}
+      {/* <div
         className="absolute inset-0 -z-10 bg-cover bg-center"
         style={{ backgroundImage: 'url("/hero/hero-bg.webp")' }}
-      />
+      /> */}
+      <AnimatedBackground />
 
       <div className="relative z-20 w-full px-4 lg:px-12 2xl:px-28 pt-24">
         <div className="grid lg:grid-cols-[55%_45%] gap-24 place-items-center min-h-[80vh]">
@@ -29,18 +54,16 @@ const HeroSection = ({ locale }: HeroSectionProps) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <motion.h1
+            <h1
+              ref={titleRef}
               className="text-[var(--white)]"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
             >
               {t.hero.title.part1}{' '}
               <span className="text-[var(--secondary)]">
                 {t.hero.title.highlight}
               </span>{' '}
               {t.hero.title.part2}
-            </motion.h1>
+            </h1>
 
             <motion.p
               className="text-xl leading-relaxed text-[var(--white)]"

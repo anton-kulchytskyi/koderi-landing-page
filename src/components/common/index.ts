@@ -1,5 +1,6 @@
 export { default as Button } from './ui/CustomButton';
 export { default as EmblaCarousel } from './ui/EmblaCarousel';
+export { default as AnimatedBackground} from './ui/AnimatedBackground';
 
 export { default as Breadcrumbs } from './blocks/Breadcrumbs';
 export { default as ContactsBlock } from './blocks/ContactsBlock';
