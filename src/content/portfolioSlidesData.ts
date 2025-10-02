@@ -36,14 +36,14 @@ export const portfolioSlidesData = [
     slug: '/uplevel-corporate',
   },
   {
-    src: '',
+    src: '/portfolio/portfolio-cta.webp',
     title: {
-      en: 'Your project here?',
-      uk: 'Ваш проект тут?',
+      en: 'Maybe here will be your project?',
+      uk: 'Можливо тут буде Ваш проект?',
     },
     subtitle: {
-      en: 'Let`s create together ✨',
-      uk: 'Давайте створимо разом ✨',
+      en: 'Let`s build something amazing together ✨',
+      uk: 'Давайте створимо щось неймовірне разом ✨',
     },
     cta: {
       en: 'Contact us',
